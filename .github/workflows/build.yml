@@ -4,6 +4,7 @@ env:
   RUST_VERSION: "1.74.0"
   CROSS_VERSION: "0.2.4"
   TEST_FEATURES: ""
+  CROSS_DEBUG: "true"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -173,7 +174,6 @@ jobs:
             if [ "${{ matrix.architecture }}" = "linux-aarch64" ]; then
               export CFLAGS="-D__ARM_ARCH=8"
             fi
-            export CROSS_DEBUG="true"
             cross build --lib --release --target ${{ matrix.target }}
           elif [ "${{ matrix.architecture }}" == "darwin-universal" ]; then
             ./build-universal.sh
