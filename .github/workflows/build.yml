@@ -5,6 +5,7 @@ env:
   CROSS_VERSION: "0.2.4"
   TEST_FEATURES: ""
   CROSS_DEBUG: "true"
+  CARGO_LOG: "trace"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
