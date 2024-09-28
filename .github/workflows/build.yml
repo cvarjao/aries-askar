@@ -173,6 +173,7 @@ jobs:
             if [ "${{ matrix.architecture }}" = "linux-aarch64" ]; then
               export CFLAGS="-D__ARM_ARCH=8"
             fi
+            export CROSS_DEBUG="true"
             cross build --lib --release --target ${{ matrix.target }}
           elif [ "${{ matrix.architecture }}" == "darwin-universal" ]; then
             ./build-universal.sh

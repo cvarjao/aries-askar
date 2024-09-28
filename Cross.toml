@@ -1,5 +1,5 @@
 [build.env]
-passthrough = ["CFLAGS"]
+passthrough = ["CFLAGS", "CROSS_DEBUG"]
 
 [target.aarch64-unknown-linux-gnu]
 image = "ghcr.io/rust-cross/manylinux2014-cross:aarch64"
