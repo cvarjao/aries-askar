@@ -402,7 +402,7 @@ jobs:
         run: |
           echo "@hyperledger:registry=https://npm.pkg.github.com" > .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
-          pnpm release
+          pnpm pack
 
   build-ios:
     name: Build library (iOS)
