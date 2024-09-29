@@ -24,7 +24,7 @@
     "nodejs": "pnpm --cwd packages/aries-askar-nodejs",
     "react-native": "pnpm --cwd packages/aries-askar-react-native",
     "test:local-build": "LIB_ARIES_ASKAR_PATH=../../target/release pnpm test",
-    "release": "lerna publish from-package --no-push --no-private --yes --no-git-tag-version",
+    "release": "lerna publish from-package --no-push --no-private --yes --no-git-tag-version --loglevel=silly",
     "release:alpha": "pnpm release --dist-tag=alpha"
   },
   "devDependencies": {
