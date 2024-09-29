@@ -14,6 +14,7 @@ concurrency:
 permissions:
   actions: write
   contents: write
+  packages: write
 
 on:
   push:
