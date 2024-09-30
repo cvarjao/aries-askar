@@ -402,12 +402,12 @@ jobs:
         run: |
           echo "@hyperledger:registry=https://npm.pkg.github.com" > .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
-          #npm i -g verdaccio
+          npm i -g verdaccio
           verdaccio &
           #pnpm --no-bail exec lerna version prerelease --no-push --no-private --yes --no-git-tag-version --loglevel=silly
           #pnpm --filter "@hyperledger/*" pack
           #pnpm exec lerna run pack
-          pnpm --no-bail exec lerna publish --registry http://localhost:4873 --canary --skip-npm  --no-push --no-private --yes --no-git-tag-version --loglevel=silly
+          pnpm --no-bail exec lerna publish prerelease --registry http://localhost:4873 --canary --skip-npm  --no-push --no-private --yes --no-git-tag-version --loglevel=silly
 
   build-ios:
     name: Build library (iOS)
