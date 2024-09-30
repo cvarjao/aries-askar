@@ -404,7 +404,7 @@ jobs:
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
           #pnpm --no-bail exec lerna version prerelease --no-push --no-private --yes --no-git-tag-version --loglevel=silly
           #pnpm pack
-          pnpm --no-bail exec lerna publish --skip-npm  --no-push --no-private --yes --no-git-tag-version --loglevel=silly
+          pnpm --no-bail exec lerna publish from-package --skip-npm  --no-push --no-private --yes --no-git-tag-version --loglevel=silly
 
   build-ios:
     name: Build library (iOS)
