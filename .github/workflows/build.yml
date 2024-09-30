@@ -408,6 +408,8 @@ jobs:
           #pnpm --filter "@hyperledger/*" pack
           #pnpm exec lerna run pack
           pnpm --no-bail exec lerna publish prerelease --registry http://localhost:4873 --canary --skip-npm  --no-push --no-private --yes --no-git-tag-version --loglevel=silly
+          ls -la .
+          ls -la ./storage/
 
   build-ios:
     name: Build library (iOS)
