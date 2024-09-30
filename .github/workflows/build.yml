@@ -402,6 +402,7 @@ jobs:
         run: |
           echo "@hyperledger:registry=https://npm.pkg.github.com" > .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
+          echo "@hyperledger:registry=http://localhost:4873" > .npmrc
           set -x
           npm i -g verdaccio
           verdaccio &
