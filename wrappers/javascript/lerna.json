@@ -2,10 +2,5 @@
   "$schema": "node_modules/lerna/schemas/lerna-schema.json",
   "version": "0.2.3",
   "packages": ["packages/*"],
-  "npmClient": "pnpm",
-  "command": {
-    "publish": {
-      "registry": "https://npm.pkg.github.com"
-    }
-  }
+  "npmClient": "pnpm"
 }
