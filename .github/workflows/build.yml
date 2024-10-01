@@ -415,7 +415,8 @@ jobs:
           pnpm --no-bail exec lerna publish from-package --dist-tag=alpha --registry http://localhost:4873 --canary  --no-push --no-private --yes --no-git-tag-version --loglevel=silly
           ls -la .
           ls -la ~/
-          find . -name '*.tgz'
+          find ~/ -name 'verdaccio'
+          find ~/ -name '*.tgz'
           ls -la ./storage/
 
   build-ios:
