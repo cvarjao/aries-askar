@@ -411,6 +411,7 @@ jobs:
           echo "@hyperledger:registry=http://localhost:4873" > .npmrc
           echo "//localhost:4873/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc
           set -x
+          git restore --source=HEAD --staged --worktree -- .
           #pnpm --no-bail exec lerna version prerelease --no-push --no-private --yes --no-git-tag-version --loglevel=silly
           #pnpm --filter "@hyperledger/*" pack
           #pnpm exec lerna run pack
