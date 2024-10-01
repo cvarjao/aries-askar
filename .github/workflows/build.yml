@@ -405,6 +405,7 @@ jobs:
           
           npm i -g verdaccio
           verdaccio &
+          sleep 5
           set -x
           export VERDACCIO_TOKEN=`curl -XPUT -H "Content-type: application/json" -d '{ "name": "user3", "password": "passsword1" }' 'http://localhost:4873/-/user/org.couchdb.user:user3' | jq -rc '.token'`
           echo "@hyperledger:registry=http://localhost:4873" > .npmrc
