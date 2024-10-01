@@ -1,6 +1,6 @@
 {
   "name": "@hyperledger/aries-askar-nodejs",
-  "version": "0.2.3",
+  "version": "0.2.4-alpha.0",
   "license": "Apache-2.0",
   "description": "Nodejs wrapper for Aries Askar",
   "main": "build/index",
