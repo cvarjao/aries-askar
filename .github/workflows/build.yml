@@ -399,6 +399,7 @@ jobs:
             pnpm release
           fi
       - name: Publish JavaScript Wrapper to GitHub
+        if: ${{ matrix.architecture == 'linux-aarch64' }}
         run: |
           echo "@hyperledger:registry=https://npm.pkg.github.com" > .npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> .npmrc
@@ -422,7 +423,12 @@ jobs:
           find ~/ -name '*.tgz'
           #ps -f
           #ps -f | grep 'Verdaccio' | grep -v 'grep' | awk '{print $2}' | xargs kill -9
-
+      - name: Save Android library
+        if: ${{ matrix.architecture == 'linux-aarch64' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-packages
+          path: ~/.local/share/verdaccio/storage
   build-ios:
     name: Build library (iOS)
     needs: [checks]
