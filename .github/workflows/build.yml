@@ -419,7 +419,8 @@ jobs:
           ls -la ~/
           find ~/ -name 'verdaccio'
           find ~/ -name '*.tgz'
-          ls -la ./storage/
+          ps -f
+          ps -af
 
   build-ios:
     name: Build library (iOS)
